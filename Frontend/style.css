@@ -1,0 +1,451 @@
+/* Glowing effect around the cursor */
+@keyframes glow {
+    0% {
+        box-shadow: 0 0 5px #9c9271, 0 0 10px #e9deb8, 0 0 15px #ffffff, 0 0 20px #d4af37;
+    }
+    80% {
+        box-shadow: 0 0 10px #e8d9a5, 0 0 15px #bab39b, 0 0 20px #f0e1af, 0 0 30px #d4af37;
+    }
+    100% {
+        box-shadow: 0 0 5px #ae9a57, 0 0 10px #cfc08e, 0 0 15px #dcd3b3, 0 0 20px #d4af37;
+    }
+}
+
+/* General Reset */
+body {
+    margin: 0;
+    height: 100vh;
+    cursor: none; /* Hide default cursor */
+    background-color: #f4f4f4;
+}
+
+/* The wand cursor */
+.wand-cursor {
+    position: absolute;
+    width: 100px; /* Size of the cursor */
+    height: 100px; /* Size of the cursor */
+    background: url('wand.png') no-repeat center center; /* Your wand image */
+    background-size: contain;
+    pointer-events: none;
+    transition: transform 0.1s ease-out;
+    will-change: transform; /* Ensure smooth movement */
+}
+
+/* Glowing effect emitted from the tip of the wand */
+.wand-cursor::after {
+    content: '';
+    position: absolute;
+    top: 0%; /* Position the glow at the top of the wand */
+    left: 6%;
+    transform: translateX(-50%);
+    width: 9px; /* Width of the glow effect */
+    height: 10px; /* Length of the glow effect */
+    background: rgba(233, 220, 149, 0.8); /* Glow color */
+    box-shadow: 0 0 10px rgba(243, 237, 204, 0.8);
+    opacity: 0; /* Initially hidden */
+    transition: opacity 0.2s ease-out;
+    border-radius: 23px;
+}
+
+/* Apply glowing effect when moving */
+.wand-cursor.glow::after {
+    opacity: 1; /* Show the glow when active */
+    animation: glow 1.5s infinite alternate; /* Animation of the glowing effect */
+}
+
+/* Background Video */
+.background-video video {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+    font-family: 'Harry Potter', sans-serif;
+}
+
+/* Header */
+header {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.7);
+    padding: 10px 0;
+    z-index: 10;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Harry Potter', sans-serif;
+}
+
+.header-content {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+}
+
+header .logo img {
+    height: 50px;
+}
+
+.nav-bar {
+    display: flex;
+    gap: 20px;
+}
+
+.nav-bar a {
+    text-decoration: none;
+    color: #f4e8c1;
+    font-family: 'Cinzel', serif;
+    font-size: 16px;
+    text-transform: uppercase;
+    transition: color 0.3s;
+}
+
+.nav-bar a:hover {
+    color: #d4af37;
+}
+
+.get-now {
+    color: #d4af37;
+    font-weight: bold;
+}
+
+.hero {
+    text-align: center;
+    color: rgb(114, 117, 89);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    position: relative;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+}
+
+.hero h1 {
+    font-size: 50px;
+    font-family: 'Harry Potter', sans-serif;
+    color: #f4e8c1;
+    font-weight: 200;
+    text-shadow: 0 4px 8px rgba(0, 0, 0, 0.7);
+}
+
+.hero h1 span {
+    color: #d4af37;
+}
+
+.hero p {
+    font-size: 18px;
+    margin-top: 10px;
+    font-family: 'Playfair Display', serif;
+}
+
+.register-btn {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #d4af37;
+    color: black;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.register-btn:hover {
+    background-color: #f4e8c1;
+}
+
+/* Scrollbar Styling */
+body {
+    height: 200vh; /* Temporary height to show scrollbar */
+}
+
+body::-webkit-scrollbar {
+    width: 10px;
+}
+
+body::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.5);
+}
+
+body::-webkit-scrollbar-thumb {
+    background: #d4af37;
+    border-radius: 5px;
+}
+
+body::-webkit-scrollbar-thumb:hover {
+    background: #f4e8c1;
+}
+
+/* Overlay */
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+}
+
+.houses {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 50px;
+    gap: 30px;
+}
+
+.card {
+    position: relative; /* Allows absolute positioning of child elements */
+    width: 300px;
+    height: 400px;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+/* Card Image */
+.card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures the background fills the card */
+    display: block;
+}
+
+/* Logo */
+.card .logo {
+    position: absolute;
+    top: 60px; /* Adjusts logo closer to the top of the card */
+    left: 50%; /* Centers horizontally */
+    transform: translateX(-50%); /* Adjusts for horizontal centering */
+    width: 100px; /* Adjust size as needed */
+    height: auto; /* Keeps aspect ratio */
+    opacity: 0; /* Hidden initially */
+    transition: opacity 0.6s ease; /* Smooth transition for opacity */
+    z-index: 2; /* Ensures the logo appears above the background */
+}
+
+/* Text */
+.card-text {
+    position: absolute; /* Position relative to the card */
+    top: 60%; /* Vertically center the text */
+    left: 50%; /* Horizontally center the text */
+    transform: translate(-50%, -50%); /* Fine-tune centering */
+    width: 90%; /* Make sure text stays within bounds */
+    color: rgb(0, 0, 0);
+    font-size: 20px;
+    font-family: Arial, sans-serif;
+    opacity: 0; /* Hidden initially */
+    transition: opacity 0.6s ease; /* Smooth transition for opacity */
+    text-align: center; /* Center the text inside the card */
+    margin-top: 25px;
+    font-family: 'Harry Potter', sans-serif;
+}
+
+/* Hover Effect for Both Logo and Text */
+.card:hover .card-text,
+.card:hover .logo {
+    opacity: 1; /* Reveal both the text and logo on hover */
+}
+
+/* General Section Styling */
+section {
+    padding: 50px 20px;
+    margin-bottom: 20px;
+  }
+  
+  h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #3c3c3c;
+    font-family: 'Harry Potter', sans-serif;
+  }
+  
+  p {
+    text-align: center;
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+  }
+  
+  ul {
+    list-style-type: none;
+    padding: 0;
+    text-align: center;
+  }
+  
+  ul li {
+    font-size: 1.2rem;
+    margin: 10px 0;
+    color: #555;
+  }
+  
+  
+  #map .responsive-img {
+    width: 100%;
+    max-width: 800px;
+    display: block;
+    margin: 0 auto;
+    border-radius: 10px;
+  }
+  
+  /* Spells Section */
+  #spells .spells-grid {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+  
+  #spells .spell-card {
+    background-color: #f1f1f1;
+    border-radius: 10px;
+    padding: 20px;
+    width: 250px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    font-family: 'Cinzel', serif;
+  }
+  
+  #spells .spell-card h3 {
+    font-size: 1.5rem;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  
+  #spells .spell-card p {
+    font-size: 1rem;
+    color: #666;
+  }
+  
+  /* Quidditch Section */
+  #quidditch ul {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+  }
+  
+  #quidditch li {
+    font-size: 1.2rem;
+    color: #333;
+  }
+  
+  /* Professors Section */
+  #professors .professor-grid {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+  }
+  
+  #professors .professor-card {
+    background-color: #f1f1f1;
+    border-radius: 10px;
+    padding: 20px;
+    width: 250px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+  }
+  
+  #professors .professor-card img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 50%;
+  }
+  
+  #professors .professor-card h3 {
+    font-size: 1.5rem;
+    color: #333;
+    margin-top: 15px;
+  }
+  
+  #professors .professor-card p {
+    font-size: 1rem;
+    color: #666;
+  }
+  
+  /* Events Section */
+  #events ul {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+  }
+  
+  #events li {
+    font-size: 1.2rem;
+    color: #333;
+  }
+  
+  /* Student Life Section */
+  #life ul {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+  }
+  
+  #life li {
+    font-size: 1.2rem;
+    color: #333;
+  }
+  
+  /* Sorting Quiz Section */
+  #quiz {
+    text-align: center;
+    background-color: #f9f9f9;
+  }
+  
+  #quiz .quiz-btn {
+    background-color: #d4af37;
+    padding: 10px 20px;
+    color: #333;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+  }
+  
+  #quiz .quiz-btn:hover {
+    background-color: #f4e8c1;
+  }
+  
+  /* News Section */
+  #news .news-grid {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+  }
+  
+  #news .news-card {
+    background-color: #f1f1f1;
+    padding: 20px;
+    width: 250px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  #news .news-card h3 {
+    font-size: 1.5rem;
+    color: #333;
+  }
+  
+  #news .news-card p {
+    font-size: 1rem;
+    color: #666;
+  }
+  
