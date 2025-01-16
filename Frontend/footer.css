@@ -1,0 +1,45 @@
+
+.footer-social-links a {
+    margin: 0 10px;
+  }
+  
+  .footer-social-links img {
+    width: 40px;
+    height: 40px;
+    filter: brightness(0) invert(1); /* Makes the icons white on a black background */
+    transition: transform 0.3s ease, filter 0.3s ease;
+  }
+  
+  .footer-social-links img:hover {
+    transform: scale(1.1);
+    filter: brightness(1);
+  }
+  
+  .footer-text {
+    margin-top: 20px;
+    font-size: 14px;
+    line-height: 1.5;
+  }
+  
+  .decorative-lines {
+    position: relative;
+    margin-top: 20px;
+  }
+  
+  .left-line, .right-line {
+    position: absolute;
+    top: 0;
+    width: 100px;
+    height: 100px;
+    background: url('images/footer\ design\ left\ \(1\).png')no-repeat center;
+    background-size: contain;
+  }
+  
+  .left-line {
+    left: 0;
+  }
+  
+  .right-line {
+    right: 0;
+  }
+  

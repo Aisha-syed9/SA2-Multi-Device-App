@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wizarding World</title>
+  <link href="https://fonts.cdnfonts.com/css/harry-potter" rel="stylesheet">
+  <link rel="stylesheet" href="quiz.css">
+  <link rel="stylesheet" href="main.css">
+<link rel="stylesheet" href="footer.css">
+<link rel="stylesheet" href="responsive.css">
+
+</head>
+<body>
+  
+
+  <header>
+    <div class="header-content">
+        <div class="logo">
+            <a href="index.html">
+                <img src="images/hogwarts-logo.png" alt="Wizarding World Logo">
+            </a>
+        </div>
+        <nav class="nav-bar">
+            <a href="map.html">Hogwarts Map</a>
+            <a href="Quidditch.html">Quidditch</a>
+            <a href="Professors.html">Professors</a>
+            <a href="events.html">Events</a>
+            <a href="quiz.html">Sorting Quiz</a>
+            <a href="News.html">News</a>
+        </nav>
+        <nav class="nav-bar2">
+            <a href="Signin.html">Sign in</a>
+            <a href="Login Page.html">Log in</a>
+        </nav>
+    </div>
+</header>
+
+
+<div class="quiz-container">
+    <h1>Sorting Hat Quiz</h1>
+    <div id="start-screen">
+      <p>Welcome to the Sorting Hat Quiz! Find out your Hogwarts house.</p>
+      <button id="start-btn">Start Quiz</button>
+    </div>
+    <div id="quiz-content" style="display: none;">
+      <p class="question" id="question-text"></p>
+      <div class="options" id="options-container"></div>
+    </div>
+    <div class="result" style="display: none;">
+      <p>You belong to <span id="house-name"></span>!</p>
+      <button class="restart-btn" onclick="restartQuiz()">Take Again</button>
+    </div>
+  </div>
+
+  <script src="quiz.js"></script>
+
+
+
+
+  
+<!-- This div will act as the custom cursor -->
+<div class="wand-cursor"></div>
+<script src="carousel.js"></script>
+<script src="wand.js"></script>
+
+</html>
