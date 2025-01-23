@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="students.css">
+    <link rel="stylesheet" href="responsive.css">
+</head>
+<body>
+  <header>
+    <div class="header-content">
+        <div class="logo">
+            <a href="index.html">
+                <img src="images/hogwarts-logo.png" alt="Wizarding World Logo">
+            </a>
+        </div>
+        <nav class="nav-bar">
+            <a href="Students.html">Students</a>
+            <a href="Professors.html">Professors</a>
+            <a href="quiz.html">Sorting Quiz</a>
+            <a href="News.html">News</a>
+        </nav>
+        <nav class="nav-bar2">
+          <a href="login.html">Log in</a>
+        </nav>
+        <!-- Hamburger Button for Mobile -->
+        <div class="hamburger" onclick="toggleMenu()">
+            &#9776; <!-- Hamburger icon -->
+        </div>
+    </div>
+</header>
+
+<!-- Mobile Navigation (Initially hidden) -->
+<div class="mobile-nav" id="mobile-nav">
+  <a href="Students.html">Students</a>
+  <a href="Professors.html">Professors</a>
+  <a href="quiz.html">Sorting Quiz</a>
+  <a href="News.html">News</a>
+  <a href="login.html">Log in</a>
+</div>
+    
+    <div class="cards">
+        <!-- Gryffindor Section -->
+        <h2 class="student">Meet the Students</h2>
+
+        <div class="card-section">
+          <div class="card card--1">
+            <div class="card__img"></div>
+            <div class="card__info">
+              <h3 class="card__title">Harry Potter</h3>
+              <p class="card__category">Gryffindor</p>
+              <p class="card__author">Protagonist</p>
+            </div>
+          </div>
+          <div class="card card--2">
+            <div class="card__img"></div>
+            <div class="card__info">
+              <h3 class="card__title">Hermione Granger</h3>
+              <p class="card__category">Gryffindor</p>
+              <p class="card__author">Best Friend</p>
+            </div>
+          </div>
+          <div class="card card--3">
+            <div class="card__img"></div>
+            <div class="card__info">
+              <h3 class="card__title">Ron Weasley</h3>
+              <p class="card__category">Gryffindor</p>
+              <p class="card__author">Harry's best friend</p>
+            </div>
+          </div>
+        </div>
+      
+        <!-- Hufflepuff Section -->
+        <div class="card-section">
+          <div class="card card--4">
+            <div class="card__img"></div>
+            <div class="card__info">
+              <h3 class="card__title">Cedric Diggory</h3>
+              <p class="card__category">Hufflepuff</p>
+              <p class="card__author">Triwizard Champion</p>
+            </div>
+          </div>
+          <div class="card card--5">
+            <div class="card__img"></div>
+            <div class="card__info">
+              <h3 class="card__title">Nymphadora Tonks</h3>
+              <p class="card__category">Hufflepuff</p>
+              <p class="card__author">Member of the Order of the Phoenix</p>
+            </div>
+          </div>
+          <div class="card card--6">
+            <div class="card__img"></div>
+            <div class="card__info">
+              <h3 class="card__title">Newt Scamander</h3>
+              <p class="card__category">Hufflepuff</p>
+              <p class="card__author">Fantastic Beasts Creator</p>
+            </div>
+          </div>
+        </div>
+      
+        <!-- Ravenclaw Section -->
+        <div class="card-section">
+          <div class="card card--7">
+            <div class="card__img"></div>
+            <div class="card__info">
+              <h3 class="card__title">Luna Lovegood</h3>
+              <p class="card__category">Ravenclaw</p>
+              <p class="card__author">Believer in magical creatures</p>
+            </div>
+          </div>
+          <div class="card card--8">
+            <div class="card__img"></div>
+            <div class="card__info">
+              <h3 class="card__title">Cho Chang</h3>
+              <p class="card__category">Ravenclaw</p>
+              <p class="card__author">Harry's romantic interest</p>
+            </div>
+          </div>
+          <div class="card card--9">
+            <div class="card__img"></div>
+            <div class="card__info">
+              <h3 class="card__title">Padma Patil</h3>
+              <p class="card__category">Ravenclaw</p>
+              <p class="card__author">Yule Ball Attendee</p>
+            </div>
+          </div>
+        </div>
+      
+        <!-- Slytherin Section -->
+        <div class="card-section">
+          <div class="card card--10">
+            <div class="card__img"></div>
+            <div class="card__info">
+              <h3 class="card__title">Draco Malfoy</h3>
+              <p class="card__category">Slytherin</p>
+              <p class="card__author">Pure-blood family</p>
+            </div>
+          </div>
+          <div class="card card--11">
+            <div class="card__img"></div>
+            <div class="card__info">
+              <h3 class="card__title">Blaise Zabini</h3>
+              <p class="card__category">Slytherin</p>
+              <p class="card__author">Draco's associate</p>
+            </div>
+          </div>
+          <div class="card card--12">
+            <div class="card__img"></div>
+            <div class="card__info">
+              <h3 class="card__title">Pansy Parkinson</h3>
+              <p class="card__category">Slytherin</p>
+              <p class="card__author">Antagonistic toward Harry</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="wand-cursor"></div>
+
+      <script src="login.js"></script>
+      <script src="carousel.js"></script>
+      <script src="wand.js"></script>
+</body>
+</html>

@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wizarding World</title>
+  <link href="https://fonts.cdnfonts.com/css/harry-potter" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="main.css">
+<link rel="stylesheet" href="footer.css">
+<link rel="stylesheet" href="responsive.css">
+
+</head>
+<body>
+  <div class="background-video">
+    <video autoplay muted loop playsinline>
+      <source src="video/hogwarts background.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+    
+  </div>
+
+  <header>
+    <div class="header-content">
+        <div class="logo">
+            <a href="index.html">
+                <img src="images/hogwarts-logo.png" alt="Wizarding World Logo">
+            </a>
+        </div>
+        <nav class="nav-bar">
+            <a href="Students.html">Students</a>
+            <a href="Professors.html">Professors</a>
+            <a href="quiz.html">Sorting Quiz</a>
+            <a href="News.html">News</a>
+        </nav>
+        <nav class="nav-bar2">
+          <a href="login.html">Log in</a>
+        </nav>
+        <!-- Hamburger Button for Mobile -->
+        <div class="hamburger" onclick="toggleMenu()">
+            &#9776; <!-- Hamburger icon -->
+        </div>
+    </div>
+</header>
+
+<!-- Mobile Navigation (Initially hidden) -->
+<div class="mobile-nav" id="mobile-nav">
+  <a href="Students.html">Students</a>
+  <a href="Professors.html">Professors</a>
+  <a href="quiz.html">Sorting Quiz</a>
+  <a href="News.html">News</a>
+  <a href="login.html">Log in</a>
+</div>
+
+  <div class="Main">
+    <div class="overlay"></div>
+    <div class="Main-content">
+      <h1>Welcome to the <span>Wizarding World</span></h1>
+      <p>Get ready for your Harry Potter journey to begin</p>
+      <a href="Login.html" class="register-btn">Get Started</a>
+    </div>
+  </div>
+ <!-- houses -->
+<section id="Houses">
+  <div class="houses">
+    
+    <!-- Title -->
+    <h2 class="houses-title">Hogwarts Houses</h2>
+    
+    <div class="card">
+      <img src="images/background map.png" alt="Hogwarts Houses">
+      <img src="images/house1.png" alt="House 1 Logo" class="logo">
+      <div class="card-text">Gryffindor values bravery, helping others, and chivalry.</div>
+    </div>
+    <div class="card">
+      <img src="images/background map.png" alt="Hogwarts Houses">
+      <img src="images/house2.png" alt="House 2 Logo" class="logo">
+      <div class="card-text">Ravenclaw values intelligence, knowledge, planning ahead, and wit.</div>
+    </div>
+    <div class="card">
+      <img src="images/background map.png" alt="Hogwarts Houses">
+      <img src="images/house3.png" alt="House 3 Logo" class="logo">
+      <div class="card-text">Hufflepuff values hard work, patience, justice, and loyalty</div>
+    </div>
+    <div class="card">
+      <img src="images/background map.png" alt="Hogwarts Houses">
+      <img src="images/house4.png" alt="House 4 Logo" class="logo">
+      <div class="card-text">Slytherin values ambition, cunningness, heritage, and resourcefulness.</div>
+    </div>
+  </div>
+</section>
+
+ <!-- Hogwarts Map Section -->
+ <section id="map">
+  <h2>Hogwarts Map</h2>
+  <p>Explore the key locations of Hogwarts:</p>
+  <div class="map-container">
+    <img src="images/rolled up map.png" alt="Rolled Up Hogwarts Map" class="rolled-up-map">
+    <img src="images/map.png" alt="Open Hogwarts Map" class="open-map">
+  </div>
+</section>
+
+
+
+<!-- Hogwarts-Themed Footer with Video Background -->
+<footer class="custom-footer" style="position: relative; overflow: hidden; color: #fff; padding: 40px;">
+  <!-- Video Background -->
+  <video autoplay muted loop id="footer-video-background" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: -1;">
+    <source src="images/Harry Potter_ Hogwarts Establishing Shots.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+
+  
+
+  <!-- Video Section Title -->
+  <div class="footer-video" style="text-align: center; margin-bottom: 30px;">
+    <h3 style="color: rgb(61, 62, 108); font-family: 'Cinzel', serif;">A Glimpse of Hogwarts</h3>
+  </div>
+
+  <!-- Social Links -->
+  <div class="footer-social-links" style="text-align: center; margin-bottom: 20px;">
+    <a href="https://facebook.com" target="_blank" style="margin: 0 10px;">
+      <img src="images/Facebooklogo.png" alt="Facebook" style="width: 40px;">
+    </a>
+    <a href="https://twitter.com" target="_blank" style="margin: 0 10px;">
+      <img src="images/Twitterlogo.png" alt="Twitter" style="width: 40px;">
+    </a>
+    <a href="https://instagram.com" target="_blank" style="margin: 0 10px;">
+      <img src="images/instagramlogo.png" alt="Instagram" style="width: 40px;">
+    </a>
+    <a href="https://youtube.com" target="_blank" style="margin: 0 10px;">
+      <img src="images/youtubelogo.png" alt="YouTube" style="width: 40px;">
+    </a>
+  </div>
+
+  <!-- Footer Text -->
+  <div class="footer-text" style="text-align: center; margin-top: 20px; font-size: 14px; font-family: 'Georgia', serif; line-height: 1.5;">
+    
+
+    <p>&copy; 2025 Hogwarts. All rights reserved. </p>
+    
+  </div>
+
+  <!-- Decorative Lines -->
+  <div class="decorative-lines" style="text-align: center; margin-top: 30px;">
+    <div class="left-line" style="display: inline-block; width: 100px; height: 2px; background: #d4af37; margin-right: 10px;"></div>
+    <div class="right-line" style="display: inline-block; width: 100px; height: 2px; background: #d4af37; margin-left: 10px;"></div>
+  </div>
+</footer>
+
+  
+<!-- This div will act as the custom cursor -->
+<div class="wand-cursor"></div>
+<script src="carousel.js"></script>
+<script src="wand.js"></script>
+<script src="quiz.js"></script>
+<script src="login.js"></script>
+
+</html>

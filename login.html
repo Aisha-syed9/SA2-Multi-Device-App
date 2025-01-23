@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login / Sign In</title>
+    <link rel="stylesheet" href="login page.css">
+    <link rel="stylesheet" href="footer.css">
+    <link rel="stylesheet" href="responsive.css">
+</head>
+<body>
+ 
+        <style>
+           body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background-color: #000000;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            padding: 10px 0;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 15px;
+            transition: background 0.3s;
+        }
+
+        nav a:hover {
+            background-color: #555;
+            border-radius: 5px;
+        }
+
+        .container {
+            padding: 20px;
+            max-width: 800px;
+            margin: auto;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        
+        @media (max-width: 600px) {
+            nav {
+                flex-direction: column;
+            }
+
+            nav a {
+                margin: 5px 0;
+            }
+        }
+        </style>
+    </head>
+    <body>
+        <header>
+            <div class="header-content">
+                <div class="logo">
+                    <a href="index.html">
+                        <img src="images/hogwarts-logo.png" alt="Wizarding World Logo">
+                    </a>
+                </div>
+                <nav class="nav-bar">
+                    <a href="Students.html">Students</a>
+                    <a href="Professors.html">Professors</a>
+                    <a href="quiz.html">Sorting Quiz</a>
+                    <a href="News.html">News</a>
+                </nav>
+                <nav class="nav-bar2">
+                    <a href="login.html">Log in</a>
+                </nav>
+                <!-- Hamburger Button for Mobile -->
+                <div class="hamburger" onclick="toggleMenu()">
+                    &#9776; <!-- Hamburger icon -->
+                </div>
+            </div>
+        </header>
+        
+        <!-- Mobile Navigation (Initially hidden) -->
+        <div class="mobile-nav" id="mobile-nav">
+            <a href="Students.html">Students</a>
+            <a href="Professors.html">Professors</a>
+            <a href="quiz.html">Sorting Quiz</a>
+            <a href="News.html">News</a>
+            <a href="login.html">Log in</a>
+        </div>
+    
+    
+    
+<!-- Signup Page -->
+<div id="signup" class="page">
+    <div class="form-container">
+        <h2>Sign Up</h2>
+        <input type="text" id="signup-name" placeholder="Enter your name" required>
+        <input type="email" id="signup-email" placeholder="Enter your email" required>
+        <input type="password" id="signup-password" placeholder="Enter your password" required>
+        <button id="signup-btn" class="submit">Sign Up</button>
+        <p>Already have an account? <span id="show-login" class="link">Log In</span></p>
+    </div>
+</div>
+
+<!-- Login Page -->
+<div id="login" class="page hidden">
+    <div class="form-container">
+        <h2>Login</h2>
+        <input type="email" id="login-email" placeholder="Enter your email" required>
+        <input type="password" id="login-password" placeholder="Enter your password" required>
+        <button id="login-btn" class="submit">Login</button>
+        <p>Don't have an account? <span id="show-signup" class="link">Sign Up</span></p>
+    </div>
+</div>
+
+<script>
+    // Show the login form and hide the signup form
+    document.getElementById('show-login').addEventListener('click', () => {
+        document.getElementById('signup').classList.add('hidden');
+        document.getElementById('login').classList.remove('hidden');
+        
+    });
+
+   // Show the login form and hide the signup form
+document.getElementById('show-login').addEventListener('click', () => {
+    document.getElementById('signup').classList.add('hidden');
+    document.getElementById('login').classList.remove('hidden');
+});
+
+// Show the signup form and hide the login form
+document.getElementById('show-signup').addEventListener('click', () => {
+    document.getElementById('login').classList.add('hidden');
+    document.getElementById('signup').classList.remove('hidden');
+});
+
+// Signup functionality
+document.getElementById('signup-btn').addEventListener('click', () => {
+    const name = document.getElementById('signup-name').value.trim();
+    const email = document.getElementById('signup-email').value.trim().toLowerCase();
+    const password = document.getElementById('signup-password').value.trim();
+
+    if (name && email && password) {
+        localStorage.setItem('user', JSON.stringify({ name, email, password }));
+        alert('Sign Up Successful! You can now log in.');
+        document.getElementById('signup').classList.add('hidden');
+        document.getElementById('login').classList.remove('hidden');
+    } else {
+        alert('Please fill in all fields.');
+    }
+});
+
+// Login functionality
+document.getElementById('login-btn').addEventListener('click', () => {
+    const email = document.getElementById('login-email').value.trim().toLowerCase();
+    const password = document.getElementById('login-password').value.trim();
+
+    const user = JSON.parse(localStorage.getItem('user'));
+
+    if (user) {
+        console.log('Stored User:', user); // Debugging log
+        if (user.email === email && user.password === password) {
+            alert(`Welcome back, ${user.name}! Redirecting to home page...`);
+            window.location.href = 'index.html';
+        } else {
+            alert('Invalid email or password. Please try again.');
+        }
+    } else {
+        alert('No user found. Please sign up first.');
+    }
+});
+
+
+</script>
+
+    
+    
+
+  
+    
+<!-- Footer Text -->
+<div class="footer-text">
+    <p>&copy; 2025 Hogwarts. All rights reserved.</p>
+</div>
+
+
+ 
+  
+    
+  <!-- This div will act as the custom cursor -->
+  <div class="wand-cursor"></div>
+  <script src="wand.js"></script>
+  <script src="login.js"></script>
+</body>
+</html>
